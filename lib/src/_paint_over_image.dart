@@ -490,7 +490,7 @@ class ImagePainterState extends State<ImagePainter> {
                   builder: (context, child) {
                     return InteractiveViewer(
                       transformationController: _transformationController,
-                      maxScale: 4,
+                      maxScale: 5,
                       minScale: 1,
                       panEnabled: _controller.mode == PaintMode.none,
                       scaleEnabled: widget.isScalable!,
