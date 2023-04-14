@@ -482,7 +482,10 @@ class ImagePainterState extends State<ImagePainter> {
         children: [
           if (widget.controlsAtTop) _buildControls(),
           Expanded(
-            child: AnimatedBuilder(
+            child: FittedBox(
+              alignment: FractionalOffset.center,
+              child: ClipRect(
+                child: AnimatedBuilder(
                   animation: _controller,
                   builder: (context, child) {
                     return InteractiveViewer(
@@ -505,6 +508,8 @@ class ImagePainterState extends State<ImagePainter> {
                     );
                   },
                 ),
+              ),
+            ),
           ),
           if (!widget.controlsAtTop) _buildControls(),
           SizedBox(height: MediaQuery.of(context).padding.bottom)
